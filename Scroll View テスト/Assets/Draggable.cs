@@ -8,11 +8,6 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 {
     public Transform parentToReturnTo = null;
 
-    public Sprite spriteMae;
-    public Sprite spriteAto;
-
-    public GameObject DZ;
-
     public void OnBeginDrag(PointerEventData eventDate)
     {
 
@@ -37,21 +32,6 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         Debug.Log("OnEndDrag");
         this.transform.SetParent(parentToReturnTo);
         GetComponent<CanvasGroup>().blocksRaycasts = true;
-
-        DropZone dz = DZ.GetComponent<DropZone>();
-        string location = dz.Decision();
-        Debug.Log(location);
-
-        if (location == "Hand")
-        {
-            this.gameObject.GetComponent<Image>().sprite = spriteMae;
-
-        }
-        else
-        {
-            this.gameObject.GetComponent<Image>().sprite = spriteAto;
-        }
     }
-
 }
 

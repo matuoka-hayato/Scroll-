@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler
 {
     public static string location;
+    static int TAG = 2;
+    public GameObject HandZone;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -26,6 +28,27 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler
         if (d != null)
         {
             d.parentToReturnTo = this.transform;
+            if (location == "Hand")
+            {
+                TAG++;
+                if (TAG >= 4)
+                {
+                    GetComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+                }
+                if (TAG <= 3)
+                {
+                    GetComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.Unconstrained;
+                }
+            }
+            else {
+                TAG--;
+                if (TAG <= 3)
+                {
+                    HandZone.GetComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.Unconstrained;
+                }
+            }
+            Debug.Log(TAG);
+            
         }
     }
 
