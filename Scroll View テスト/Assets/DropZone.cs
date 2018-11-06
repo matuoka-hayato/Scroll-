@@ -31,18 +31,18 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler
             if (location == "Hand")
             {
                 TAG++;
-                if (TAG >= 4)
+                if (TAG >= 5)
                 {
                     GetComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.PreferredSize;
                 }
-                if (TAG <= 3)
+                if (TAG <= 4)
                 {
                     GetComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.Unconstrained;
                 }
             }
             else {
                 TAG--;
-                if (TAG <= 3)
+                if (TAG <= 4)
                 {
                     HandZone.GetComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.Unconstrained;
                 }
