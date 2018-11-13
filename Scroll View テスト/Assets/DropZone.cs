@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler
 {
     public static string location;
-    static int TAG = 2;
     public GameObject HandZone;
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -23,6 +22,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler
     {
         Debug.Log(eventData.pointerDrag.name + "was droped on " + gameObject.name);
         location = gameObject.name;
+        int HandCount = transform.childCount;
+
 
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
         if (d != null)
@@ -30,24 +31,24 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler
             d.parentToReturnTo = this.transform;
             if (location == "Hand")
             {
-                TAG++;
-                if (TAG >= 5)
+                Debug.Log(HandCount);
+                if (HandCount >= 6)
                 {
                     GetComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.PreferredSize;
                 }
-                if (TAG <= 4)
+                if (HandCount <= 5)
                 {
                     GetComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.Unconstrained;
                 }
             }
             else {
-                TAG--;
-                if (TAG <= 4)
+                Debug.Log(HandCount);
+                if (HandCount <= 5)
                 {
                     HandZone.GetComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.Unconstrained;
                 }
             }
-            Debug.Log(TAG);
+            
             
         }
     }
