@@ -32,14 +32,16 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler
             if (location == "Hand")
             {
                 Debug.Log(HandCount);
-                if (HandCount >= 6)
-                {
-                    GetComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.PreferredSize;
-                }
                 if (HandCount <= 5)
                 {
                     GetComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.Unconstrained;
                 }
+                Debug.Log(HandCount);
+                if (HandCount >= 6)
+                {
+                    GetComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+                }
+                
             }
             else {
                 Debug.Log(HandCount);
