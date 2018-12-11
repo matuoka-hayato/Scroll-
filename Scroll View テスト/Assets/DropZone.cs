@@ -4,12 +4,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-
 public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler
 {
     public static string location;
+    static int TAG = 2;
     public GameObject HandZone;
-    private bool CardDrag = true;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -24,8 +23,6 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler
     {
         Debug.Log(eventData.pointerDrag.name + "was droped on " + gameObject.name);
         location = gameObject.name;
-        int HandCount = transform.childCount;
-
 
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
         if (d != null)
@@ -33,36 +30,33 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler
             d.parentToReturnTo = this.transform;
             if (location == "Hand")
             {
-                Debug.Log(HandCount);
-                if (HandCount <= 5)
-                {
-                    GetComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.Unconstrained;
-                }
-                Debug.Log(HandCount);
-                if (HandCount >= 6)
+                TAG++;
+                if (TAG >= 5)
                 {
                     GetComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.PreferredSize;
                 }
-
+                if (TAG <= 4)
+                {
+                    GetComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.Unconstrained;
+                }
             }
-            else
-            {
-                Debug.Log(HandCount);
-                if (HandCount <= 5)
+            else {
+                TAG--;
+                if (TAG <= 4)
                 {
                     HandZone.GetComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.Unconstrained;
                 }
             }
-            object CardDrag = true;
-            Debug.Log(CardDrag);
-
+            Debug.Log(TAG);
+            
         }
     }
+
     public string Decision()
     {
         Debug.Log("あげたいのは" + location);
         return location;
     }
-}
 
+}
 
