@@ -375,7 +375,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 787323091}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.000028268223
+  m_Size: 0.9998321
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -507,6 +507,7 @@ GameObject:
   - component: {fileID: 362241443}
   - component: {fileID: 362241442}
   - component: {fileID: 362241441}
+  - component: {fileID: 362241444}
   m_Layer: 5
   m_Name: save
   m_TagString: Untagged
@@ -571,7 +572,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 362241442}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 362241444}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &362241442
@@ -608,6 +620,17 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 362241439}
   m_CullTransparentMesh: 0
+--- !u!114 &362241444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 362241439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1789ab1b732a3d54a9b0e828740b9937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &422355113 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224638778459871964, guid: 4c55e8e2de9a6394a9a081951de26541,
@@ -1043,7 +1066,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1599351844360736, guid: 4c55e8e2de9a6394a9a081951de26541, type: 2}
       propertyPath: m_Name
-      value: Node (2)
+      value: monster2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114779740484550680, guid: 4c55e8e2de9a6394a9a081951de26541,
+        type: 2}
+      propertyPath: m_Text
+      value: "\u30AB\u30FC\u30C92"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c55e8e2de9a6394a9a081951de26541, type: 2}
@@ -1147,7 +1175,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1599351844360736, guid: 4c55e8e2de9a6394a9a081951de26541, type: 2}
       propertyPath: m_Name
-      value: Node (5)
+      value: monster6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114779740484550680, guid: 4c55e8e2de9a6394a9a081951de26541,
+        type: 2}
+      propertyPath: m_Text
+      value: "\u30AB\u30FC\u30C96"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c55e8e2de9a6394a9a081951de26541, type: 2}
@@ -1256,7 +1289,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1599351844360736, guid: 4c55e8e2de9a6394a9a081951de26541, type: 2}
       propertyPath: m_Name
-      value: Node (3)
+      value: monster4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114779740484550680, guid: 4c55e8e2de9a6394a9a081951de26541,
+        type: 2}
+      propertyPath: m_Text
+      value: "\u30AB\u30FC\u30C94"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c55e8e2de9a6394a9a081951de26541, type: 2}
@@ -1500,7 +1538,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1599351844360736, guid: 4c55e8e2de9a6394a9a081951de26541, type: 2}
       propertyPath: m_Name
-      value: Node (1)
+      value: monster1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114779740484550680, guid: 4c55e8e2de9a6394a9a081951de26541,
+        type: 2}
+      propertyPath: m_Text
+      value: "\u30AB\u30FC\u30C91"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c55e8e2de9a6394a9a081951de26541, type: 2}
@@ -1638,7 +1681,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1599351844360736, guid: 4c55e8e2de9a6394a9a081951de26541, type: 2}
       propertyPath: m_Name
-      value: Node (4)
+      value: monster5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114779740484550680, guid: 4c55e8e2de9a6394a9a081951de26541,
+        type: 2}
+      propertyPath: m_Text
+      value: "\u30AB\u30FC\u30C95"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c55e8e2de9a6394a9a081951de26541, type: 2}
@@ -1825,7 +1873,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1599351844360736, guid: 4c55e8e2de9a6394a9a081951de26541, type: 2}
       propertyPath: m_Name
-      value: Node (1)
+      value: monster8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114779740484550680, guid: 4c55e8e2de9a6394a9a081951de26541,
+        type: 2}
+      propertyPath: m_Text
+      value: "\u30AB\u30FC\u30C98"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c55e8e2de9a6394a9a081951de26541, type: 2}
@@ -1927,6 +1980,15 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1599351844360736, guid: 4c55e8e2de9a6394a9a081951de26541, type: 2}
+      propertyPath: m_Name
+      value: monster7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114779740484550680, guid: 4c55e8e2de9a6394a9a081951de26541,
+        type: 2}
+      propertyPath: m_Text
+      value: "\u30AB\u30FC\u30C97"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c55e8e2de9a6394a9a081951de26541, type: 2}
   m_IsPrefabAsset: 0
@@ -1969,7 +2031,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0000084166, y: 198.95302}
+  m_AnchoredPosition: {x: -0.0000084166, y: 0.0000027651317}
   m_SizeDelta: {x: 0, y: 353.01}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1969730595
@@ -2266,6 +2328,15 @@ Prefab:
         type: 2}
       propertyPath: m_Color.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599351844360736, guid: 4c55e8e2de9a6394a9a081951de26541, type: 2}
+      propertyPath: m_Name
+      value: monster3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114779740484550680, guid: 4c55e8e2de9a6394a9a081951de26541,
+        type: 2}
+      propertyPath: m_Text
+      value: "\u30AB\u30FC\u30C93"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c55e8e2de9a6394a9a081951de26541, type: 2}

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/deckEdit.unity
+- path: Assets/Scenes/decksave.unity
   isLoaded: 1
   isActive: 1

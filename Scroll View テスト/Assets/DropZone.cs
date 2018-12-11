@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+
 public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler
 {
     public static string location;
     public GameObject HandZone;
+    private bool CardDrag = true;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -41,25 +43,26 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler
                 {
                     GetComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.PreferredSize;
                 }
-                
+
             }
-            else {
+            else
+            {
                 Debug.Log(HandCount);
                 if (HandCount <= 5)
                 {
                     HandZone.GetComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.Unconstrained;
                 }
             }
-            
-            
+            object CardDrag = true;
+            Debug.Log(CardDrag);
+
         }
     }
-
     public string Decision()
     {
         Debug.Log("あげたいのは" + location);
         return location;
     }
-
 }
+
 
